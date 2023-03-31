@@ -1,0 +1,178 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+	<title>jQuery Mobile</title>
+	<link rel="stylesheet" href="./css/jquery.mobile-1.4.5.min.css"/>
+	<script src="./css/jquery-1.11.1.min.js"></script>
+	<script src="./css/jquery.mobile-1.4.5.min.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <script type="text/javascript" src="cordova.js"></script>
+  <script type="text/javascript">
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    function onDeviceReady() {
+      var deviceButton = document.getElementById("deviceButton");
+      deviceButton.addEventListener("click", onDeviceButtonClick, false);
+    }
+
+    function onDeviceButtonClick() {
+      var deviceInfo = "Device Name: " + device.name + "\n" +
+                       "Device Cordova: " + device.cordova + "\n" +
+                       "Device Platform: " + device.platform + "\n" +
+                       "Device UUID: " + device.uuid + "\n" +
+                       "Device Version: " + device.version + "\n";
+      alert(deviceInfo);
+    }
+  </script>
+<style>
+   li { list-style:none; }
+  .picture { list-style:none; padding:0; margin:0; }
+  .picture li { float:left; width:50%;}
+  .picture li a {display:block; margin:5px; border: 1px }
+  .picture li img { display:block; width:50%;  height:auto;}
+  .picture li img:hover { display:block; width:100%;  height:auto;} 
+</style>
+</head>
+
+<body>
+<data-theme="b">
+	<div data-role="page" id="home">
+		<div data-role="header" data-theme="b">
+			<h1>구글 소개 앱</h1>
+		</div>
+		<div data-role="content" style="text-align:center">
+				<img src="img/googlehead.png" style="max-width : 100%; height: auto;">
+			<ul data-role="listview" data-inset="true">
+				<li><a href="#intro">구글 소개</a></li>
+				<li><a href="#movie" data-rel="dialog">구글 소개 영상</a></li>
+				<li><a href="#service" >서비스 및 소프트웨어</a></li>
+				<li><a href="#location">구글 로고</a></li>
+			</ul>
+			<button id="deviceButton">Device</button>
+
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="b">
+			<h1>Google_노혜민</h1>
+			
+		</div>
+	</div>
+	
+	<div data-role="page" id="intro" data-theme="b">
+		<div data-role="header" data-theme="b">
+			<a href="#home" data-icon="arrow-l" data-direction="reverse">처음</a>			
+			<h1>구글 소개</h1>
+		</div>
+		<div data-role="content">
+				<div  style="text-align:center">
+					<img src="img/googlehead.png">
+				</div>			
+			<div data-role="collapsible-set" data-theme="b" data-content-theme="e">
+				<div data-role="collapsible" data-collapsed="false">
+					<h3>구글이란?</h3>
+					<p>구글(Google)은 웹 검색, 포털 사이트, 또는 플랫폼을 운영하고 광고를 주요 수익모델 영역으로 하는 미국의 다국적 IT 회사, 또는 구글 사가 서비스하는 검색 엔진을 가리킨다.</p>
+				</div>
+				<div data-role="collapsible">
+					<h3>유래 및 표어</h3>
+					<p>래리 페이지가 많은 정보를 모아서 체계화하자는 의미에서 구골(Googol)이라는 이름을 제안했고, 숀이 회사의 이름으로 구골플렉스( 
+						1
+						0
+						g
+						o
+						o
+						g
+						o
+						l
+						=
+						1
+						0
+						1
+						0
+						100
+						10 
+						googol=10 
+						10 
+						100)를 제안했다. 하지만 여기서 이미 구골이라는 사이트가 존재했기 때문에 구글(Google)로 변경하게 되었다고 한다.</p>
+					<p>비공식 표어이자 모토는 "Don't be evil"(사악해지지 말자)이다.</p>
+				</div>
+				<div data-role="collapsible" >
+					<h3>구글 역사</h3>
+					<p>세르게이 브린과 래리 페이지라는 스탠퍼드 대학교의 두 유대인 대학원생이 세상을 바꾸기 위해서 1998년 9월 27일에 회사를 만든 것이 구글의 시초</p>
+					<p>구글은 탄생 이후 세계 최대의 포털 사이트가 되기까지 10년도 채 걸리지 않았으며, 인터넷으로 무료 서비스를 중심으로 돈을 벌 수 있다는 걸 입증하였다.</p>
+				</div>
+			</div>
+		</div>
+		<div data-role="footer" data-position="fixed" data-theme="b">
+			<h1>Google 영상_노혜민</h1>
+		</div>		
+	</div>
+	
+	<div data-role="page" id="movie" data-theme="b">
+		<div data-role="header" data-position="fixed" data-theme="b">
+			<h1>구글 코리아 소개 영상</h1>
+		</div>
+		<div data-role="content" >
+			<div class="ui-bar ui-bar-a">구글 소개 동영상</div><br/>
+			<li><iframe width="100%" height="240" src="https://www.youtube.com/embed/YDZ6o29PMsc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></li><br/>
+			<!--<div class="ui-bar ui-bar-a">플래시몹(서울역광장) 동영상</div><br/>
+			<li><video controls width="100%" preload="metadata">
+				<source src="mop.mp4" type="video/mp4">
+			</video></li>-->
+		</div>
+		<div data-role="footer" data-theme="b">
+		</div>
+	</div>
+	
+	<div data-role="page" id="service" data-theme="b">
+		<div data-role="header" data-theme="b">
+			<a href="#home" data-icon="arrow-l" data-direction="reverse">처음</a>			
+			<h1>서비스 및 소프트웨어</h1>
+		</div>
+		<div data-role = "content" data-position="fixed" data-theme="b">
+			<p><a href="https://www.google.com/search">Google Search</a></p>
+			<p><a href="https://www.youtube.com/">YouTube</a></p>
+			<p><a href="https://www.google.com/maps/">Google Maps</a></p>
+			<p><a href="https://play.google.com/store">Google Play Store</a></p>
+			<p><a href="https://drive.google.com/">Google Drive</a></p>
+			<p><a href="https://www.google.com/calendar">Google Calendar</a></p>
+			<p><a href="https://mail.google.com/">Gmail</a></p>
+			<p><a href="https://www.google.com/docs">Google Docs</a></p>
+			<p><a href="https://www.google.com/sheets">Google Sheets</a></p>
+			<p><a href="https://www.google.com/slides">Google Slides</a></p>
+			<p><a href="https://translate.google.com/">Google Translate</a></p>
+			<p><a href="https://www.google.com/chrome">Google Chrome</a></p>
+			<p><a href="https://www.android.com/">Android</a></p>
+			<p><a href="https://store.google.com/us/category/phones">Google Pixel Phone</a></p>
+
+
+
+		</div>
+	</div>
+	<div data-role="page" id="location"  data-theme="b">
+		<div data-role="header" data-position="fixed"  data-theme="b">
+			<a href="#home" data-icon="arrow-l" data-direction="reverse">처음</a>
+			<h1>구글 로고</h1>
+		</div>
+		<div data-role="content">
+            <ul class="picture">
+				<li><a href="img/l1.gif" rel="external"><img src="img/l1.gif" /></a><p>1997-1998</p> </li>	
+				<li><a href="img/l2.png" rel="external"><img src="img/l2.png" /></a><p>1998-1998</p></li>	
+				<li><a href="img/l3.png" rel="external"><img src="img/l3.png" /></a><p>1998-1999</p></li>	
+				<li><a href="img/l4.png" rel="external"><img src="img/l4.png" /></a><p>1999-2010</p></li>	
+				<li><a href="img/l5.png" rel="external"><img src="img/l5.png" /></a><p>2010-2013</p></li>	
+				<li><a href="img/l6.svg" rel="external"><img src="img/l6.svg" /></a><p>2013-2015</p></li>	
+				<li><a href="img/l7.svg" rel="external"><img src="img/l7.svg" /></a><p>2015~현재</p></li>	
+				
+            </ul>
+		</div>
+
+		<div data-role="footer" data-position="fixed" data-theme="b">
+			<h1>구글로고_노혜민</h1>
+			
+		</div>		
+	</div>
+</div>	
+</body>
+</html>
