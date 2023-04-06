@@ -7,6 +7,9 @@
 	<link rel="stylesheet" href="./css/jquery.mobile-1.4.5.min.css"/>
 	<script src="./css/jquery-1.11.1.min.js"></script>
 	<script src="./css/jquery.mobile-1.4.5.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
 
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
   <script type="text/javascript" src="cordova.js"></script>
@@ -101,6 +104,41 @@
 					<h3>구글 역사</h3>
 					<p>세르게이 브린과 래리 페이지라는 스탠퍼드 대학교의 두 유대인 대학원생이 세상을 바꾸기 위해서 1998년 9월 27일에 회사를 만든 것이 구글의 시초</p>
 					<p>구글은 탄생 이후 세계 최대의 포털 사이트가 되기까지 10년도 채 걸리지 않았으며, 인터넷으로 무료 서비스를 중심으로 돈을 벌 수 있다는 걸 입증하였다.</p>
+				
+				</div>
+				<div data-role="collapsible">
+					<h3>구글 사용자수 변화</h3>
+					<p>밑의 차트는 구글의 사용자수 변화를 2000년부터 2020년까지 5년단위로 표현한 차트입니다</p>
+					<canvas id="userChart"></canvas>
+					<script>
+						// Data
+						const data = {
+							labels: ['2000', '2005', '2010', '2015', '2020', '2022'],
+							datasets: [{
+								label: 'Google Users',
+								data: [15, 50, 170, 1000, 2400, 3000],
+								backgroundColor: 'rgba(255, 99, 132, 0.2)',
+								borderColor: 'rgba(255, 99, 132, 1)',
+								borderWidth: 1
+							}]
+						};
+				
+						// Options
+						const options = {
+							scales: {
+								y: {
+									beginAtZero: true
+								}
+							}
+						};
+				
+						// Chart
+						const userChart = new Chart('userChart', {
+							type: 'line',
+							data: data,
+							options: options
+						});
+					</script>
 				</div>
 			</div>
 		</div>
