@@ -1,7 +1,9 @@
 # google
 programming
 
-사용한 하드웨어 Apple mac M1
+사용한 하드웨어 
+<img width="278" alt="스크린샷 2023-04-07 오후 2 21 05" src="https://user-images.githubusercontent.com/95477323/230546376-5bba375e-43f5-4b95-a529-75acd03592d9.png">
+
 
 사용한 소프트웨어 vscode, android studio
 
